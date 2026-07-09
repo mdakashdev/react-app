@@ -1,7 +1,19 @@
+import BaseInput from "./components/BaseInput";
+
 function App() {
   return (
       <div>
-        <h1>Hello World</h1>
+          <input
+              type="text"
+              name="first_name"
+              placeholder="John Doe"
+          />
+          <BaseInput
+            label="Name"
+            type="text"
+            name="first_name"
+            placeholder="John Doe"
+          />
       </div>
   );
 }
