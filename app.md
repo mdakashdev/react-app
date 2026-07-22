@@ -1,23 +1,21 @@
 ## Application ready
 
-> pnpm create vite@latest
+## 1. Build React App 
 
-```text
-Project name:
-│  react-app
-│
-◇  Select a framework:
-│  React
-│
-◇  Select a variant:
-│  TypeScript
-│
-◇  Which linter to use?
-│  ESLint
-│
-◆  Install with pnpm and start now?
-│  ● Yes / ○ No
-```
+- Using vite
+- Framework: React, TypeScript, Eslint
+- From Doc: https://react.dev/learn/build-a-react-app-from-scratch
+- command: `pnpm create vite@latest`
+- note: ready hobar kono kichu dekhar dorkar nai, just dekhbo scafolding paichi and run hocche
+
+
+## 2. Create Component
+
+- components folder er virote file gulo korbo
+- Component Doc: https://react.dev/learn/your-first-component
+- basic syntax (using function) component and implement in App.tsx
+- React Fragment `<> </>` or `<div></div>`
+
 
 ## Router setup
 
