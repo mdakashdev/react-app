@@ -23,41 +23,30 @@
 - type use kore kora jan abar interface use kore kore jai
 - optional props define korte pari
 
-## 4. v-model - Two way binding
+## 4. Emit
+
+
+## 5. v-model - Two way binding
 
 - passing: value + onChange ; instead of v-model="username"
 - Vue-তে যেমন ref() + v-model, React-এ তেমন useState() + value/onChange।
-- useState use korte hobe, ei majhe tumi tomar moto kore name degine korte parbe as like ref value in vue 
-- 
+- useState use korte hobe, ei majhe tumi tomar moto kore name degine korte parbe as like ref value in vue
 
-## 5. Routing
+## 6. Routing
+- router er jonno react-router-dom install korte hobe
+- then pages folder create kore page korte hobe
+- then router er vitor router confige and object create korte hobe
+- then router main.tsx a register korte hobe
+
+## state management
+
+
 
 ## Tools
 
 - chrome extension - react dev tools theke dekha jai - component & profile theke
 
 
-
-## Router setup
-
-> npm install react-router-dom
-
-Router er jonno - need react-router-dom install kora.
-
-- Page Create
-```text
-src/pages/Home.tsx
-src/pages/About.tsx
-```
-
-- Router Config
-> src/router/index.tsx
-
- - Router register
-
-main.tsx a router register korte hobe se jonno, ProviderRouter use korte hobe RouterProvider
-
 ## Confusion
 
 - .tsx extension keno use kortechi ? eita actually ki?
-- 
