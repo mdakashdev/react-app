@@ -1,6 +1,6 @@
 import BaseInput from "./components/BaseInput";
 import UiInput from "./components/UiInput";
-import { useUserStore } from "../src/store/useStore.ts"
+import { useUserStore } from '../src/store/useStore.ts';
 import Preview from "./components/Preview.tsx";
 import { useStoreState } from '../src/store/useState.ts';
 
