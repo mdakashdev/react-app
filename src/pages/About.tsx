@@ -1,7 +1,7 @@
-import { useStoreState } from '../store/useState.ts';
+import { useStateStore } from '../store/useState.ts';
 
 function About() {
-    const { count, component } = useStoreState();
+    const { count, component } = useStateStore();
     return (
         <div>
             <h1>About Page</h1>

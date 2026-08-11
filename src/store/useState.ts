@@ -8,7 +8,7 @@ interface IState {
     getDoubleCount: () => number
 }
 
-export const useStoreState = create<IState>((set, get) => {
+export const useStateStore = create<IState>((set, get) => {
 
     console.log('set', set);
 

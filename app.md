@@ -39,8 +39,7 @@
 - then router main.tsx a register korte hobe
 
 ## state management
-
-
+- follow: @doc/state-management/basic-global-store.md
 
 ## Tools
 
