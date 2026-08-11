@@ -6,10 +6,10 @@ import { useStoreState } from '../src/store/useState.ts';
 
 function App() {
     const { name } = useUserStore();
-    const { count, component } = useStoreState();
+    const { count, component, increment, decrement } = useStoreState();
   return (
       <div>
-          <h2>{ name }</h2>
+          {/*<h2>{ name }</h2>*/}
           <input
               type="text"
               name="first_name"
@@ -25,6 +25,8 @@ function App() {
           <Preview/>
             <p>count: { count }</p>
             <p>component: { component }</p>
+            <div onClick={() => increment(1) }>+1</div>
+            <div onClick={() => decrement(1) }>-1</div>
       </div>
   );
 }

@@ -1,4 +1,4 @@
-## Create State with React
+## Create State
 
 - Create a `store` folder.
 - Create store files inside it, for example, `useState.ts`.
@@ -8,11 +8,13 @@
 import { create } from 'zustand';
 
 interface IState {
+    // STATE
     count: number,
     component: string
 }
 
 export const useStoreState = create<IState>(() => ({
+    // STATE-এর initial value
     count: 0,
     component: 'checkbox'
 }));
