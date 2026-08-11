@@ -6,7 +6,7 @@ import { useStoreState } from '../src/store/useState.ts';
 
 function App() {
     const { name } = useUserStore();
-    const { count, component, increment, decrement } = useStoreState();
+    const { count, component, increment, decrement, getDoubleCount } = useStoreState();
   return (
       <div>
           {/*<h2>{ name }</h2>*/}
@@ -25,8 +25,9 @@ function App() {
           <Preview/>
             <p>count: { count }</p>
             <p>component: { component }</p>
-            <div onClick={() => increment(1) }>+1</div>
-            <div onClick={() => decrement(1) }>-1</div>
+            <div onClick={() => increment(1) }>+</div>
+            <div onClick={() => decrement(1) }>-</div>
+          <p>double count: { getDoubleCount() }</p>
       </div>
   );
 }

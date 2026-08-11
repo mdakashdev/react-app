@@ -4,10 +4,11 @@ interface IState {
     count: number,
     component: string,
     increment: (num: number) => void,
-    decrement: (num: number) => void
+    decrement: (num: number) => void,
+    getDoubleCount: () => number
 }
 
-export const useStoreState = create<IState>((set) => {
+export const useStoreState = create<IState>((set, get) => {
 
     console.log('set', set);
 
@@ -25,10 +26,14 @@ export const useStoreState = create<IState>((set) => {
             })
         },
 
-        decrement: (num: string) => {
+        decrement: (num: number) => {
             set((state) => ({
                 count: state.count - 1
             }))
+        },
+
+        getDoubleCount: () => {
+            return get().count * 2;
         }
     }
 
