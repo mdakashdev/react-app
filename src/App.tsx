@@ -7,6 +7,9 @@ import { useStoreState } from '../src/store/useState.ts';
 function App() {
     const { name } = useUserStore();
     const { count, component, increment, decrement, getDoubleCount } = useStoreState();
+    const tripleCount = useStoreState(
+        (state) => state.count * 3
+    );
   return (
       <div>
           {/*<h2>{ name }</h2>*/}
@@ -28,6 +31,7 @@ function App() {
             <div onClick={() => increment(1) }>+</div>
             <div onClick={() => decrement(1) }>-</div>
           <p>double count: { getDoubleCount() }</p>
+          <p>triple count: { tripleCount }</p>
       </div>
   );
 }
