@@ -12,7 +12,7 @@
 - Create store files inside it, for example, `useState.ts`.
 - Import `create` from Zustand and using `create function` each store separately.
 
-## Registration
+## Registration & create state
 - Import the store into the component where you want to use it.
 - Destructure the required states and use the template.
 - Example: `create-state.md`
