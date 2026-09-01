@@ -8,7 +8,6 @@
 - command: `pnpm create vite@latest`
 - note: ready hobar kono kichu dekhar dorkar nai, just dekhbo scafolding paichi and run hocche
 
-
 ## 2. Create Component
 
 - components folder er virote file gulo korbo
@@ -25,7 +24,6 @@
 
 ## 4. Emit
 
-
 ## 5. v-model - Two way binding
 
 - passing: value + onChange ; instead of v-model="username"
@@ -40,6 +38,9 @@
 
 ## state management
 - follow: @doc/state-management/basic-global-store.md
+
+## http client
+- follow: @doc/http-client/basic-things.md
 
 ## Tools
 
