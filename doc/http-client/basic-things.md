@@ -27,6 +27,7 @@ Setar jonno akta `pages` create korechi - `list page` ans sei page diye ami `rou
 # Implement - tanstack
 
 install - react tanstack query : `pnpm add @tanstack/react-query`
+https://tanstack.com/query/latest/docs/framework/react/installation
 
 - তারপর application-এর root-এ `QueryClientProvider দিতে হবে।`
 
