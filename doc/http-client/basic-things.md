@@ -8,26 +8,11 @@
 - https://react.dev/reference/react/useEffect
 
 
-```
-Component render
-      ↓
-useEffect চলে
-      ↓
-getUsers()
-      ↓
-API থেকে users আসে
-      ↓
-setUsers(data)
-      ↓
-Component আবার render
-      ↓
-users.map()
-      ↓
-UI-তে users দেখায়
-```
-
-
 ---
+1. Implement - axios, tanStack & hooks
+
+
+
 # Implement - axios
 
 - vue er moto axios intall korechi then central configure and fearuwise data get.
@@ -37,6 +22,7 @@ Setar jonno akta `pages` create korechi - `list page` ans sei page diye ami `rou
 - list page `<UserList/>` component dekiyechi, ei component ta actually data show korar jonno use korechi 
 - <UserList/> component a, useEffect (details- @doc/common/useEffect.md) use kore sobkichu use korechi.
 - useState - follow @doc/common/use-state.md 
+---
 
 # Implement - tanstack
 
@@ -283,3 +269,98 @@ TanStack Query জানে:
 > `"users"` data আগে থেকেই আমার cache-এ আছে।
 
 ---
+
+
+---
+
+# Implement hook
+
+হ্যাঁ, **React-এও বানাতে পারো**। তবে Vue-এর মতো একে `composable` বলা হয় না।
+
+React-এ এর নাম সাধারণত **Custom Hook**।
+
+### ১. `hooks/useUsers.ts` বানাবে
+
+```ts
+import { useQuery } from "@tanstack/react-query";
+import { getUsers } from "../api/userApi";
+
+export const useUsers = () => {
+    return useQuery({
+        queryKey: ["users"],
+        queryFn: getUsers,
+    });
+};
+```
+
+### ২. Component-এ
+
+আগে:
+
+```tsx
+import { useQuery } from "@tanstack/react-query";
+import { getUsers } from "../api/userApi";
+```
+
+এখন শুধু:
+
+```tsx
+import { useUsers } from "../hooks/useUsers";
+```
+
+তারপর:
+
+```tsx
+const UserList = () => {
+    const {
+        data: users,
+        isLoading,
+        isError,
+        error,
+    } = useUsers();
+
+    // ...
+};
+```
+
+### Folder structure
+
+```text
+src/
+├── api/
+│   ├── axios.ts
+│   └── userApi.ts
+│
+├── hooks/
+│   └── useUsers.ts
+│
+├── components/
+│   └── UserList.tsx
+│
+├── router/
+│
+├── App.tsx
+└── main.tsx
+```
+
+### সবচেয়ে important distinction
+
+React-এ:
+
+| Vue          | React        |
+| ------------ | ------------ |
+| Composable   | Custom Hook  |
+| `useUsers()` | `useUsers()` |
+| `useQuery()` | `useQuery()` |
+| `ref()`      | `useState()` |
+| `computed()` | `useMemo()`  |
+
+তাই তোমার **`useUsers()` বানানো একদম correct approach**।
+
+একটা জিনিস মনে রাখবে:
+
+> **`userApi.ts` = API call কোথায়/how হবে**
+> **`useUsers.ts` = সেই API data React component কীভাবে consume করবে**
+> **`UserList.tsx` = UI কীভাবে দেখাবে**
+
+এভাবে করলে component অনেক clean থাকে।
